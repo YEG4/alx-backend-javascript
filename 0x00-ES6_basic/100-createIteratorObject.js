@@ -1,7 +1,7 @@
 export default function createIteratorObject(report) {
   return {
-    [Symbol.iterator]: function () {
-      const employees = Object.values(report.allEmployees);
+    [Symbol.iterator]() {
+      const employees = Object.values(report.allEmployees); // eslint-disable-line object-shorthand
       let departmentIndex = 0;
       let employeeIndex = 0;
 
@@ -10,14 +10,16 @@ export default function createIteratorObject(report) {
           while (departmentIndex < employees.length) {
             if (employeeIndex < employees[departmentIndex].length) {
               return {
-                value: employees[departmentIndex][employeeIndex++],
+                /* eslint-disable-next-line no-plusplus */
+                value: employees[departmentIndex][employeeIndex++], //
+
                 done: false,
               };
-            } else {
-              departmentIndex++;
-              employeeIndex = 0;
-              continue;
             }
+            // eslint-disable-line no-else-return
+            departmentIndex++; // eslint-disable-line no-plusplus
+            employeeIndex = 0;
+            continue; // eslint-disable-line no-continue
           }
           return { done: true };
         },
