@@ -1,0 +1,6 @@
+[0-9]-main.js
+[0-9][0-9]-main.js
+[0-9][0-9][0-9]-main.js
+node_modules
+main
+test.js
