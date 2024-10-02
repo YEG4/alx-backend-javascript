@@ -8,7 +8,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     uploadPhoto(fileName),
   ]).then((results) => {
     results.forEach((result) => {
-      arr.push({ status: result.status, value: result.reason });
+      if (result.status === 'fulfilled') {
+        arr.push({ status: result.status, value: result.value });
+      } else {
+        arr.push({ status: result.status, value: result.reason.message });
+      }
     });
     console.log(arr);
   });
