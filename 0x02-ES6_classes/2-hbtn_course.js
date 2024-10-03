@@ -3,7 +3,7 @@ export default class HolbertonCourse {
     /* eslint-disable-next-line no-underscore-dangle */
     this._name = name;
     /* eslint-disable-next-line no-underscore-dangle */
-    this._length = length;
+    this.length = length;
     /* eslint-disable-next-line no-underscore-dangle */
     this._students = students;
   }
