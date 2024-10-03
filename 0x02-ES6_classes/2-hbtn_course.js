@@ -13,7 +13,9 @@ export default class HolbertonCourse {
   }
 
   set name(name) {
-    if (typeof name !== 'string') throw new TypeError('Name must be a string');
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
     this._name = name; // eslint-disable-line no-underscore-dangle
   }
 
